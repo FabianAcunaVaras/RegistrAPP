@@ -1,20 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      RegistrAPP
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-app>
+        <ion-content fullscreen class="ion-padding" scroll-y="false">
+          <ion-slides>
+            <ion-slide>
+              <img src="assets/img/slide-1.png"/>
+              <h2>Bienvenido</h2>
+              <h3>Presione el botón <b>Iniciar</b> para ingresar al sistema</h3>
+              <ion-button routerLink="/login" routerDirection="forward" fill="clear">Iniciar <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+            </ion-slide>
+    
+          </ion-slides>
+        </ion-content>
+      </ion-app>
 </ion-content>
