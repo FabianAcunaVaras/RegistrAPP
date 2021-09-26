@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario} from '../usuarios/usuarios.model';
+import { UsuarioService} from '../usuarios/usuarios.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recuperar',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecuperarPage implements OnInit {
 
-  constructor() { }
+  usuario: Usuario;
 
-  ngOnInit() {
+  constructor(private activateRoute: ActivatedRoute, 
+    private UsuarioService: UsuarioService) { }
+
+  ngOnInit(){this.activateRoute.paramMap.subscribe(
+    paramMap=>{     
+       const idContactoRecibido=paramMap.get('NombreUsuario');
+      this.usuario=this.UsuarioService.getUsuario(idContactoRecibido);
+      console.log(idContactoRecibido);
+    }
+  );
   }
 
 }

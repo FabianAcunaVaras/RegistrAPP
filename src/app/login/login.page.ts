@@ -19,6 +19,7 @@ export class LoginPage implements OnInit {
   usuarioServiceS: Usuario;
   campo: string;
 
+
   constructor(private router: Router,private toastController: ToastController,
    private usuarioService: UsuarioService) { }
 
@@ -32,7 +33,7 @@ export class LoginPage implements OnInit {
     };
    
     if(this.validateModel(this.user)){
-      this.usuarioServiceS=this.usuarioService.getUsuario(this.user.usuario);
+       this.usuarioServiceS=this.usuarioService.getUsuario(this.user.usuario);
       if(this.usuarioService.getUsuario(this.user.usuario).password === this.user.password){
         
         this.router.navigate(['/principal/', this.user.usuario], navigationExtras);
@@ -57,7 +58,7 @@ export class LoginPage implements OnInit {
     if(this.validateUsuario(this.user)){
       //this.usuarioServiceS=this.usuarioService.getUsuario(this.user.usuario);
       if(this.usuarioService.getUsuario(this.user.usuario).usuario === this.user.usuario){
-        this.router.navigate(['/principal/', this.user.usuario], navigationExtras);
+        this.router.navigate(['/recuperar/',this.user.usuario], navigationExtras);
       }else{
         this.presentToast('Nombre de usuario no valido');
       }

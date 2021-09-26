@@ -12,6 +12,12 @@ export class UsuarioService {
       usuario: 'ctapia',
       password: '4928'
     },
+    {
+      nombre: '1Cristian',
+      apellidos:'1Tapia',
+      usuario: '1ctapia',
+      password: '14928'
+    },
 ];
   constructor() {
   }
