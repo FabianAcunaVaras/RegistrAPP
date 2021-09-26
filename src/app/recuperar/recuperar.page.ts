@@ -18,7 +18,7 @@ export class RecuperarPage implements OnInit {
     paramMap=>{
       const idContactoRecibido=paramMap.get('NombreUsuario');
       this.usuario=this.UsuarioService.getUsuario(idContactoRecibido);
-      console.log(idContactoRecibido);
+  
     }
   );
   }

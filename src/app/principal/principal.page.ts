@@ -17,8 +17,7 @@ export class PrincipalPage implements OnInit {
   ngOnInit() {this.activateRoute.paramMap.subscribe(
     paramMap=>{
       const idContactoRecibido=paramMap.get('NombreUsuario');
-      this.usuario=this.UsuarioService.getUsuario(idContactoRecibido);
-      console.log(idContactoRecibido);
+      this.usuario=this.UsuarioService.getUsuario(idContactoRecibido)
     }
   );
   }

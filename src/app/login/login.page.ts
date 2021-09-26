@@ -92,16 +92,7 @@ export class LoginPage implements OnInit {
   }
 
   validateUsuario(NombreUsuario: any){
-    
-    // for (const [key, value] of Object.entries(model)) {
-      
-    //   if (value==='') {
-        
-    //     this.campo=key;
-        
-    //     return false;
-    //   }
-    // }
+
     if (NombreUsuario===''){
       return false;
     }
