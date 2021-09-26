@@ -20,10 +20,12 @@
       </ion-item>
       <ion-row>
         <ion-col>
-          <ion-button expand="full" (click)="ingresar()">Ingresar</ion-button>
+          <!-- <ion-button expand="full" (click)="ingresar()">Ingresar</ion-button> -->
+          <ion-button (click)="ingresar()" fill="clear">Ingresar <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
         </ion-col>
         <ion-col>
-          <ion-button expand="full" (click)="recuperar()">Recuperar Contraseña</ion-button>
+          <!-- <ion-button expand="full" (click)="recuperar()">Recuperar Contraseña</ion-button> -->
+          <ion-button (click)="recuperar()" fill="clear">Recuperar Contraseña <ion-icon slot="end" name="key-outline"></ion-icon></ion-button>
         </ion-col>
       </ion-row>
     </ion-card-content>

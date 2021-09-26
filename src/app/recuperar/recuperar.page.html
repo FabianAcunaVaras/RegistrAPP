@@ -1,29 +1,24 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>RegistrApp</ion-title>
+    <ion-title>
+      RegistrAPP
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/home'></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-title>Iniciar Sesion</ion-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item lines="full">
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>
-      </ion-item>
-      <ion-item lines="full">
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-      </ion-item>
-      <ion-row>
-        <ion-col>
-          <ion-button expand="full" (click)="ingresar()">Ingresar</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-
+<ion-content [fullscreen]="true">
+      <ion-app>
+        <ion-content fullscreen class="ion-padding" scroll-y="false">
+          <ion-slides>
+            <ion-slide>
+              <img src="assets/img/slide-2.png"/>
+              <h2>Bienvenido</h2>              
+              <ion-label position="floating">Usuario: </ion-label>{{usuario.nombre}}{{' '}}{{usuario.apellidos}} 
+              <ion-label position="floating">Su contraseña es: </ion-label>{{usuario.password}}              
+            </ion-slide>    
+          </ion-slides>
+        </ion-content>
+      </ion-app>
 </ion-content>

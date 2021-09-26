@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
   },
   {
-    path: 'recuperar',
+    path: 'recuperar/:NombreUsuario',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
 
