@@ -20,9 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
   },
   {
-    path: ':NombreUsuario',
+    path: 'principal/:NombreUsuario',
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
-  },  {
+  },
+  {
     path: 'recuperar',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
