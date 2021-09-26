@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      RegistrAPP
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/home'></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+      <ion-app>
+        <ion-content fullscreen class="ion-padding" scroll-y="false">
+          <ion-slides>
+            <ion-slide>
+              <img src="assets/img/slide-3.png"/>
+              <h2>Bienvenido</h2>              
+              <ion-label>Usuario: </ion-label>{{usuario.nombre}}{{' '}}{{usuario.apellidos}}              
+            </ion-slide>    
+          </ion-slides>
+        </ion-content>
+      </ion-app>
+</ion-content>
