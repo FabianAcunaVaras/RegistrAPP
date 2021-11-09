@@ -4,13 +4,12 @@ import { ToastController } from '@ionic/angular';
 import { Usuario } from '../usuarios/usuarios.model';
 import { UsuarioService } from '../usuarios/usuarios.service';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-login-alumnos',
+  templateUrl: './login-alumnos.page.html',
+  styleUrls: ['./login-alumnos.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginAlumnosPage implements OnInit {
 
   user={
     usuario:'',
@@ -24,6 +23,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
+  
   ingresar(){
     const navigationExtras: NavigationExtras = {
       state: {
