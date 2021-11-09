@@ -1,12 +1,16 @@
+import { Platform, AlertController } from '@ionic/angular';
+
 import { Injectable } from '@angular/core';
+
+import { HttpClient } from '@angular/common/http';
+
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 
-import { Platform, AlertController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
 import { Profesor } from '../Profesor/profesor.model';
+
 
 @Injectable({
   providedIn: 'root'
