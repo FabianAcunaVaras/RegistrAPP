@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'recuperar/:NombreUsuario',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  },  {
+    path: 'login-alumnos',
+    loadChildren: () => import('./login-alumnos/login-alumnos.module').then( m => m.LoginAlumnosPageModule)
   },
+
 
 
 ];

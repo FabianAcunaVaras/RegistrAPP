@@ -19,7 +19,6 @@ export class LoginPage implements OnInit {
   usuarioServiceS: Usuario;
   campo: string;
 
-
   constructor(private router: Router,private toastController: ToastController,
    private usuarioService: UsuarioService) { }
 
@@ -33,7 +32,7 @@ export class LoginPage implements OnInit {
     };
    
     if(this.validateModel(this.user)){
-       this.usuarioServiceS=this.usuarioService.getUsuario(this.user.usuario);
+      this.usuarioServiceS=this.usuarioService.getUsuario(this.user.usuario);
       if(this.usuarioService.getUsuario(this.user.usuario).password === this.user.password){
         
         this.router.navigate(['/principal/', this.user.usuario], navigationExtras);
@@ -58,7 +57,7 @@ export class LoginPage implements OnInit {
     if(this.validateUsuario(this.user)){
       //this.usuarioServiceS=this.usuarioService.getUsuario(this.user.usuario);
       if(this.usuarioService.getUsuario(this.user.usuario).usuario === this.user.usuario){
-        this.router.navigate(['/recuperar/',this.user.usuario], navigationExtras);
+        this.router.navigate(['/recuperar/', this.user.usuario], navigationExtras);
       }else{
         this.presentToast('Nombre de usuario no valido');
       }
@@ -93,19 +92,14 @@ export class LoginPage implements OnInit {
   }
 
   validateUsuario(NombreUsuario: any){
-    
-    // for (const [key, value] of Object.entries(model)) {
-      
-    //   if (value==='') {
-        
-    //     this.campo=key;
-        
-    //     return false;
-    //   }
-    // }
+
     if (NombreUsuario===''){
       return false;
     }
     return true;
+  }
+
+  volver(){
+    this.router.navigate(['/home']);
   }
 }
