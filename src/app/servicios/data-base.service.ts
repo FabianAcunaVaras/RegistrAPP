@@ -10,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 
 import { Profesor } from '../Profesor/profesor.model';
+import { UsuarioService } from '../usuarios/usuarios.service';
 
 
 @Injectable({
@@ -29,7 +30,7 @@ export class DataBaseService {
 
   constructor(http: HttpClient,plataforma: Platform,sqlite: SQLite, sqlPorter: SQLitePorter) 
   { 
-    alert('xxxx-01');
+    //alert('constuctor');
     plataforma.ready()
     .then(() => {
       this.sqlite=sqlite;
@@ -42,10 +43,10 @@ export class DataBaseService {
         createFromLocation: 1
       })
       .then((db: SQLiteObject) => {
-        alert('xxxx-2');
+        //alert('crea tablas');
         this.dataBase = db;
         this.crearTablas();
-        alert('xxxx-1 ');
+        //alert('tabla creada');
         }).catch(e =>{
           alert('Error conexión'  );
           console.error(e);
@@ -62,11 +63,11 @@ export class DataBaseService {
         this.sqlPorter.importSqlToDb(this.dataBase, sql)
           .then(async _ => {
             // Informar que la base de datos está lista
-            alert('xxxx-3 ');
+            //alert('xxxx-3 ');
             this.cargarProfesores();
-            alert('xxxx-4 ');
+            //alert('xxxx-4 ');
             this.dbReady.next(true);
-            alert('xxxx-5 ');
+            //alert('xxxx-5 ');
           }).catch(e => {
             alert('Error al importar la base de datos');
             console.error(e);
@@ -112,7 +113,17 @@ export class DataBaseService {
         }
       });
     }
-  
+
+    getUsuario(usurio: string, clave:string): Promise<Profesor>{
+      return this.dataBase.executeSql('SELECT * FROM Profesor WHERE usuario = ? and clave = ?', [usurio,clave])
+      .then(resSelect => { 
+        if(resSelect.rows.length){
+          return resSelect.rows.item(0);
+        }
+        return null;
+        });
+      }
+    
     addProfesor(nombre, apellidos,domicilio,email,fono,usuario,clave) {
       let data = [ nombre, apellidos,domicilio,email,fono,usuario,clave];
       return this.dataBase.executeSql('INSERT INTO Profesor (nombre, apellidos, domicilio, email,fono,usuario,clave) VALUES (?, ?, ? ,? ,?, ?, ?)', data)
